@@ -50,11 +50,109 @@ console.log(mobileCheck())
 // });
 
 // Подключение свайпера
-// import Swiper, { Navigation, Pagination } from 'swiper';
-// Swiper.use([Navigation, Pagination]);
-// const swiper = new Swiper(el, {
-//   slidesPerView: 'auto',
+import Swiper from 'swiper/bundle';
+
+const swiper1 = new Swiper('.swiper1', {
+
+  breakpoints: {
+    768: {
+      slidesPerView: 1,
+    },
+    940: {
+      slidesPerView: 2,
+      spaceBetween:20
+    },
+    1280: {
+      slidesPerView: 4,
+      spaceBetween: 10
+    }
+  },
+  // Navigation arrows
+  navigation: {
+    nextEl: '.slider__next',
+    prevEl: '.slider__prev',
+  }
+
+});
+const swiper2 = new Swiper('.swiper2', {
+
+  // Responsive breakpoints
+  breakpoints: {
+    640: {
+      slidesPerView: 1,
+    },
+    660: {
+      slidesPerView: 2,
+      spaceBetween: 10
+    },
+    940: {
+      slidesPerView: 3,
+      spaceBetween:20
+    },
+    1280: {
+      slidesPerView: 4,
+      spaceBetween: 10
+    }
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.advant__next',
+    prevEl: '.advant__prev',
+  }
+});
+
+const swiper4 = new Swiper(".swiper-p", {
+  slidesPerView: 'auto',
+  spaceBetween: 10,
+  loop: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  // breakpoints: {
+  //   1930: {
+  //     slidesPerView: 7,
+  //   },
+  //   1530: {
+  //     slidesPerView: 6,
+  //   },
+  //   1230: {
+  //     slidesPerView: 5,
+  //   },
+  //   930: {
+  //     slidesPerView: 4,
+  //   },
+  //   600: {
+  //     slidesPerView: 3,
+  //   },
+  //   430: {
+  //     slidesPerView: 2,
+  //   },
+  //   320: {
+  //     slidesPerView: 'auto',
+  //   }
+  // }
+});
+
+const swiper3 = new Swiper('.roadmap-t_swiper', {
+  slidesPerView: 'auto',
+  freeMode: true,
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.road__next1',
+    prevEl: '.road__prev1',
+  }
+});
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const width = window.innerWidth
+//   if (width > 1024) {
+
+//   }
 // });
+
 
 // Подключение анимаций по скроллу
 // import AOS from 'aos';

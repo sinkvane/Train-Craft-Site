@@ -377,3 +377,7 @@ template {
 [hidden] {
 	display: none;
 }
+
+text {
+	white-space: normal !important;
+}

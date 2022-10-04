@@ -1,0 +1,132 @@
+@import "../mixins";
+
+.advant {
+  background: #272727;
+  background-image: url("../img/advantages/bg.png");
+  background-position: center;
+}
+
+.advant__inner {
+  padding: 10rem 0rem;
+
+  @include laptop {
+    padding: 8rem 0rem;
+  }
+
+  @include tablet {
+    padding: 7rem;
+  }
+
+  @include mobile {
+    padding: 5rem 0rem 3rem;
+  }
+}
+
+.advant__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+
+  @include mobile {
+    justify-content: center;
+  }
+}
+
+.advant__title {
+  font-weight: 700;
+  font-size: 4.2rem;
+  color: var(--white);
+  text-transform: uppercase;
+
+  @include tablet {
+    font-size: 3.7rem;
+  }
+
+  @include mobile {
+    font-size: 2.6rem;
+  }
+}
+
+.advant__slider {
+  display: flex;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.advant__prev,
+.advant__next {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  background: #e99126;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &::after {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 14px;
+    height: 20px;
+    background-image: url("../img/svg/slide-arrow.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    left: 22px;
+    top: 16px;
+  }
+}
+
+.swiper2 {
+  overflow: hidden;
+}
+
+.advant__prev {
+  margin-right: 2rem;
+
+  &::after {
+    transform: rotate(180deg);
+    left: 18px;
+  }
+}
+
+.advant__slide {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  background-color: #232323;
+  border: 1px solid #c77a53;
+  border-radius: 15px;
+  height: 90px;
+  padding: 1.5rem;
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background-image: url("../img/advantages/bg-1.png");
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 140px;
+    height: 120px;
+  }
+}
+
+.advant__slide--text {
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 24px;
+  color: var(--white);
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.advant__svg {
+  width: 100px;
+  height: 50px;
+  margin-right: 1.5rem;
+}

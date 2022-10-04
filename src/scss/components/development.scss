@@ -1,0 +1,247 @@
+@import '../mixins';
+
+.develop {
+  background: #171717;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  position: relative;
+  overflow: hidden;
+  background-image: url("../img/development/light.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: -100% 100%;
+
+  @include laptop {
+    padding-top: 15rem;
+  }
+
+  @include mobile {
+    padding-top: 10rem;
+  }
+}
+
+.develop__inner {
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  &::after {
+    display: block;
+    position: absolute;
+    content: "";
+    background-image: url("../img/development/wheel.png");
+    background-size: 100%;
+    width: 700px;
+    height: 700px;
+    left: -160px;
+    top: -5%;
+    z-index: 1;
+
+    @include laptop {
+      top: -30%;
+      left: 50%;
+      transform: translate(-50%) rotate(90deg);
+    }
+
+    @include tablet {
+      width: 500px;
+      height: 500px;
+      top: -20%;
+    }
+
+    @include mobile {
+      width: 300px;
+      height: 300px;
+      top: -10%;
+    }
+  }
+}
+
+.develop__block {
+  background: #2b2b2b;
+  box-shadow: 0px 0px 55px rgba(0, 0, 0, 0.49);
+  border-radius: 60px;
+  padding: 10rem;
+  position: relative;
+  z-index: 2;
+  width: 80%;
+  background-image: url("../img/development/grass.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+  &-img {
+    display: block;
+    position: absolute;
+    content: "";
+    background-image: url("../img/development/car.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 455px;
+    width: 434px;
+    top: -46px;
+    right: -45px;
+    z-index: 3;
+
+    @include laptop {
+      width: 404px;
+      height: 425px;
+      right: 30px;
+      top: auto;
+      bottom: 0;
+    }
+
+    @include tablet {
+      width: 260px;
+      height: 271px;
+      right: 10%;
+      bottom: -50px;
+    }
+
+    @include mobile {
+      width: 200px;
+      height: 211px;
+      right: 5%;
+      bottom: 0;
+    }
+  }
+
+  @include tablet {
+    padding: 8rem 8rem 30rem 8rem;
+    border-radius: 30px;
+  }
+
+  @include mobile {
+    padding: 8rem 8rem 20rem 8rem;
+  }
+
+  @include small-tablet {
+    padding: 5rem 3rem 20rem 3rem;
+  }
+}
+
+.block__info {
+  width: 57%;
+
+  @include laptop {
+    width: 80%;
+  }
+
+  @include tablet {
+    width: 100%;
+  }
+}
+
+.develop__title {
+  margin-top: 2.5rem;
+  font-weight: 700;
+  font-size: 4.2rem;
+  line-height: 40px;
+  text-align: left;
+  color: var(--white);
+  text-transform: uppercase;
+
+  & > span {
+    color: #e33737;
+  }
+
+  @include tablet {
+    font-size: 2.6rem;
+    line-height: 25px;
+  }
+
+  @include mobile {
+    font-size: 2rem;
+  }
+}
+
+.develop__text {
+  margin-top: 2.5rem;
+  color: var(--white);
+  font-size: 1.8rem;
+  line-height: 24px;
+
+  @include tablet {
+    font-size: 1.6rem;
+  }
+
+  @include mobile {
+    font-size: 1.4rem;
+    line-height: 20px;
+  }
+}
+
+.developer__cards {
+  display: flex;
+
+  @include laptop {
+    flex-direction: column;
+  }
+}
+
+.card__item {
+  background: radial-gradient(
+        60.65% 72.97% at 100% 100%,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    radial-gradient(
+        57.98% 57.98% at 9.61% 13.11%,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0) 100%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    rgba(58, 57, 57, 0.45);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+  padding: 2rem;
+
+  & > span {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    min-width: 164px;
+
+    @include mobile {
+      min-width: auto;
+      font-size: 1.2rem;
+    }
+  }
+
+  & > svg {
+    margin-right: 1.5rem;
+    width: 40px;
+    height: 40px;
+
+    @include mobile {
+      width: 30px;
+      height: 30px;
+      margin-right: 0.5rem;
+    }
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include laptop {
+    max-width: 260px;
+    margin-right: 0;
+    margin-bottom: 2rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include tablet {
+    max-width: none;
+  }
+
+  @include mobile {
+    min-width: none;
+  }
+}

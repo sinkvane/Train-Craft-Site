@@ -2,11 +2,12 @@
 // colors
 :root {
   // base
-  --font-family: "Open Sans", sans-serif;
-  --content-width: 1170px;
-  --container-offset: 15px;
+  --font-family: "Poppins", sans-serif;
+  --content-width: 1290px;
+  --container-offset: 10px;
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 
   // colors
-  --light-color: #fff;
+  --white: #fff;
+  --green: #6ABC68;
 }

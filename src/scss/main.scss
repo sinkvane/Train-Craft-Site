@@ -6,11 +6,13 @@
 
 // подключения компонентов страницы
 @import "./components/header";
-
-// тестовые стили, удалите их
-.page__body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: var(--vh);
-}
+@import "./components/main-block";
+@import "./components/concept";
+@import "./components/game";
+@import "./components/advantages";
+@import "./components/team";
+@import "./components/chart";
+@import "./components/partnership";
+@import "./components/roadmap";
+@import "./components/development";
+@import "./components/footer";
