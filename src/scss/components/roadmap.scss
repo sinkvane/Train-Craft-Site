@@ -30,7 +30,7 @@
 
 .road__info {
   position: absolute;
-  margin: 9rem 3rem;
+  margin: 9rem 1rem;
 }
 
 .road__title {
@@ -44,11 +44,21 @@
 
 .road__text {
   display: block;
+  display: flex;
   font-weight: 400;
   color: var(--white);
   font-size: 1.8rem;
   margin-bottom: 3rem;
   text-align: left;
+  position: relative;
+  align-items: center;
+}
+
+.road__progress {
+  width: 100%;
+  max-width: 30px;
+  height: 30px;
+  margin-right: 1.5rem;
 }
 
 .roadmap__nav {
@@ -97,9 +107,9 @@
   background-color: #171717;
   position: relative;
   padding-top: 7rem;
-  z-index: 3;
+  z-index: 2;
   & .container {
-    z-index: 2;
+    z-index: 1;
     position: relative;
   }
   &_swiper {
@@ -108,9 +118,9 @@
     left: 0;
     right: 0;
     width: 100%;
-    z-index: 1;
+    z-index: 0;
     &-wrapper {
-      z-index: 1;
+      z-index: 0;
     }
     &-slide {
       width: 2266px;
@@ -257,7 +267,7 @@
   }
   .road__info {
     position: absolute;
-    margin: 6rem 5rem;
+    margin: 6rem 3rem;
   }
   .road__title {
     font-size: 4.2rem;

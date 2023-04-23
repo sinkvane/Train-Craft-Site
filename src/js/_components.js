@@ -1,5 +1,4 @@
-import $, { nodeName } from 'jquery';
-// import Highcharts from 'highcharts';
+import $ from 'jquery';
 import gallery from 'fslightbox';
 
 // Найти все ссылки начинающиеся на #
@@ -22,11 +21,10 @@ for(let anchor of anchors) {
 let burgerNav = document.querySelector('.burger__toggle');
 let burgerLabel = document.querySelector('.burger__label');
 let inputToggler = document.getElementById('burger');
-console.log(inputToggler);
 
 // Скрываем меню при клике на ссылку
-document.addEventListener('click', function(e) {
-  if(e.target.className === 'burger__link') {
+document.addEventListener('click', function (e) {
+  if (e.target.className === 'burger__link') {
     e.preventDefault(); // Отменяем переход по ссылке
     burgerNav.classList.add('burger__nav');
     inputToggler.checked = false;
@@ -42,125 +40,167 @@ burgerLabel.addEventListener('click', function () {
 
 
 $(document).ready(function () {
-    $('.team__load').click(function() {
-        $(this).parent('.team__inner').find('.team__partners.active').next('.team__partners').removeClass('hide')
-        $(this).parent('.team__inner').find('.team__partners.active').next('.team__partners').addClass('active')
-        if ($(this).parent('.team__inner').find('.team__partners.hide').length <= 0) {
-            $(this).parent('.team__inner').find('.team__hide').removeClass('hide')
-            $(this).addClass('hide')
-        }
-    })
-    $('.team__hide').click(function() {
-        $(this).parent('.team__inner').find('.team__partners.active').addClass('hide')
-        $(this).parent('.team__inner').find('.team__partners.active').removeClass('active')
-        $(this).parent('.team__inner').find('.team__partners.show').removeClass('hide')
-        $(this).parent('.team__inner').find('.team__partners.show').addClass('active')
-        $(this).addClass('hide')
-        $(this).parent('.team__inner').find('.team__load').removeClass('hide')
-    })
+
+  peopleList();
 
 
-    var par1 = $('.main__bg--car')
-    var par2 = $('.develop__block-img')
+  $('.team__load').click(function () {
+    $(this).parent('.team__inner').find('.team__partners.active').next('.team__partners').removeClass('hide')
+    $(this).parent('.team__inner').find('.team__partners.active').next('.team__partners').addClass('active')
+    if ($(this).parent('.team__inner').find('.team__partners.hide').length <= 0) {
+      $(this).parent('.team__inner').find('.team__hide').removeClass('hide')
+      $(this).addClass('hide')
+    }
+  })
+  $('.team__hide').click(function () {
+    $(this).parent('.team__inner').find('.team__partners.active').addClass('hide')
+    $(this).parent('.team__inner').find('.team__partners.active').removeClass('active')
+    $(this).parent('.team__inner').find('.team__partners.show').removeClass('hide')
+    $(this).parent('.team__inner').find('.team__partners.show').addClass('active')
+    $(this).addClass('hide')
+    $(this).parent('.team__inner').find('.team__load').removeClass('hide')
+  })
 
 
-	window.addEventListener('mousemove',cursor)
-	// window.addEventListener('scroll',cursort)
+  var par1 = $('.main__bg--car')
+  var par2 = $('.develop__block-img')
 
-	function cursor(e) {
-		// console.log(e);
-		// mouseCursor.style.top = e.pageY + 'px';
-		// mouseCursor.style.left = e.pageX + 'px';
-		// mouseCursor.css("top", e.clientY)
-        // var trx = par1.offset().left
-        // console.log(trx)
-        var x1 = e.clientX / 8
-        var x2 = e.clientX / 100
-		par1.css("left", x1)
-		par2.css("right", x2)
-		// console.log(e.clientX)
-		// console.log(e.clientY)
-	}
+
+  window.addEventListener('mousemove', cursor)
+  // window.addEventListener('scroll',cursort)
+
+  function cursor(e) {
+    // console.log(e);
+    // mouseCursor.style.top = e.pageY + 'px';
+    // mouseCursor.style.left = e.pageX + 'px';
+    // mouseCursor.css("top", e.clientY)
+    // var trx = par1.offset().left
+    // console.log(trx)
+    var x1 = e.clientX / 8
+    var x2 = e.clientX / 100
+    par1.css("left", x1)
+    par2.css("right", x2)
+    // console.log(e.clientX)
+    // console.log(e.clientY)
+  }
 });
 
-// Highcharts.chart('container', {
-//   chart: {
-//     type: 'pie',
-//   },
-//   credits: { enabled: false },
-//   title: {
-//     text: null
-//   },
-//   tooltip: {
-//     headerFormat: '',
-//     pointFormat: '<span style="color:{point.color}">\u25CF</span> <b> {point.name}</b><br/>' + '{point.name}<b><br/>' + ': <b>{point.z}</b><br/>',
-//     crookDistance: '10%',
-//   },
-//   series: [{
-//     minPointLength: 5,
-//     strokeWidth: '0',
-//     innerSize: '60%',
-//     dataLabels: {
-//       formatter: function () {
-//         return this.y > 1 ? '<b>' + this.point.name + ':</b> ' +
-//         this.y + '%' : null;
-//       },
-//       connectorWidth: 1,
-//       connectorColor: '#8D8D8D',
-//       distance: 10,
-//     },
-//     name: 'pointers',
-//     data: [{
+google.charts.load("current", {
+  packages: ["corechart"]
+});
+google.charts.setOnLoadCallback(drawChart);
 
-//       name: 'Liquidity Pool',
-//       color: '#C38946',
-//       y: 5,
-//       z: 5
-//     }, {
-//       name: 'Game & Staking Rewards',
-//       color: '#906531',
-//       y: 31,
-//       z: 31
-//     }, {
-//       name: 'Marketing & Community',
-//       color: '#9C7A50',
-//       y: 10,
-//       z: 10
-//     }, {
-//       name: 'Advisors',
-//       color: '#826D60',
-//       y: 2,
-//       z: 2
-//     }, {
-//       name: 'Private Rounds',
-//       color: '#4E2C16',
-//       y: 15,
-//       z: 15
-//     }, {
-//       name: 'Team: 15%',
-//       color: '#5B3D29',
-//       y: 15,
-//       z: 15
-//     }, {
-//       name: 'Public Round',
-//       color: '#674C3B',
-//       y: 2,
-//       z: 2
-//     },
-//     {
-//       name: 'Ecosystem & Treasury',
-//       color: '#765E4E',
-//       y: 20,
-//       z: 20
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+    ['Name', 'Percentage'],
+    ['Liquidity Pool: 5%', 5],
+    ['Game & Staking Rewards: 31%', 31],
+    ['Marketing & Community: 10%', 10],
+    ['Advisors: 2%', 2],
+    ['Private Rounds: 15%', 15],
+    ['Team: 15%', 15],
+    ['Public Round: 2%', 2],
+    ['Ecosystem & Treasury: 20%', 20]
+  ]);
 
-//     }]
-//   }],
-//   responsive: {
-//     rules: [{
-//       condition: {
-//         minWidth: 200,
-//         size: '10%'
-//       }
-//     }]
-//   }
-// });
+  var legendPosition = 'labeled';
+  var fontSize = 12;
+
+  if ($(window).width() < 400) {
+    legendPosition = 'labeled';
+    fontSize = 14;
+  }
+
+  var options = {
+    pieHole: 0.55,
+    backgroundColor: 'none',
+    chartArea: {
+      left: 0,
+      top: 20,
+      width: '100%',
+      height: '100%'
+    },
+    colors: ['#C38946', '#906531', '#9C7A50', '#826D60', '#4E2C16', '#5B3D29', '#674C3B', '#765E4E',],
+    fontSize: fontSize,
+    fontName: 'Poppins',
+    legend: {
+      alignment: 'center',
+      textStyle: {
+        color: 'white',
+        fontSize: fontSize,
+        bold: false,
+      },
+      position: legendPosition,
+      labeledValueText: 'none'
+    },
+    pieSliceBorderColor: 'none',
+    pieSliceText: 'none',
+    tooltip: {
+      textStyle: {
+        color: '#1E0E62',
+        fontSize: fontSize,
+        bold: false
+      },
+      trigger: 'none'
+    }
+
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+  chart.draw(data, options);
+}
+
+
+function peopleList() {
+  $('.people').each(function () {
+    var hold = $(this);
+    var link = hold.find('.load-more').find('.btn');
+
+    var _check = function () {
+      if (hold.find('.el.folded').length) {
+        hold.addClass('hasFolded');
+      } else {
+        hold.removeClass('hasFolded');
+      }
+    };
+
+    _check();
+  });
+
+  var _more = function () {
+    $('.people').find('.el').each(function () {
+      var hold = $(this);
+      var link = hold.find('.link-more');
+      var wrap = hold.find('.descr');
+      var text = hold.find('.descr-inner');
+      var num = '4.8em';
+
+      if (text.outerHeight() > wrap.outerHeight()) {
+        hold.addClass('hasMore');
+      }
+
+      link.on('click', function () {
+        var h = wrap.outerHeight();
+        var h2 = text.outerHeight();
+
+        if (hold.hasClass('open')) {
+          wrap.animate({
+            height: num
+          }, function () {
+            hold.removeClass('open');
+            wrap.css('height', num);
+          });
+        } else {
+          wrap.animate({
+            height: h2
+          }, function () {
+            hold.addClass('open');
+            wrap.css('height', 'auto');
+          });
+        }
+      });
+    });
+  };
+
+  _more();
+}

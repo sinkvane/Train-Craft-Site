@@ -13,9 +13,50 @@
   margin-top: 9rem;
   margin-bottom: 9rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  max-width: 1300px;
   width: 100%;
+
+  &--bottom {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-end;
+    margin-bottom: 7rem;
+    margin-top: -5rem;
+
+    & > .lore__text {
+      width: 50%;
+      margin-right: 0;
+
+      @include laptop {
+        width: 93%;
+      }
+
+      @include tablet {
+        margin-right: 0;
+      }
+
+      @include small-tablet {
+        width: 95%;
+      }
+    }
+
+    @include laptop {
+      align-items: center;
+    }
+
+    @include tablet {
+      align-items: center;
+      margin-top: -4rem;
+    }
+
+    @include small-tablet {
+      align-items: center;
+    }
+  }
 
   @include tablet {
     flex-wrap: wrap;
@@ -36,7 +77,7 @@
 
 .game__lore {
   position: relative;
-  width: 35%;
+  width: 45%;
   margin-right: 2rem;
   z-index: 2;
 
@@ -48,15 +89,15 @@
 
 .game__img {
   position: relative;
-  width: 50%;
+  width: 45%;
 
-  @include tablet {
-    width: 50%;
+  @include laptop {
+    margin-top: 10rem;
   }
 
   @include small-tablet {
     margin-top: 3rem;
-    width: 50%;
+    width: 80%;
   }
 
   @include mobile {
@@ -83,7 +124,7 @@
   font-weight: 400;
   font-size: 1.8rem;
   color: var(--white);
-  line-height: 140%;
+  line-height: 120%;
   margin-bottom: 2rem;
 
   &:last-child {
@@ -109,11 +150,12 @@
 .lore__img {
   position: relative;
   z-index: 2;
+  width: 60%;
 
   &--light {
     position: absolute;
     right: 0;
-    width: 100%;
+    width: 50%;
     height: 100%;
   }
 }
@@ -199,22 +241,24 @@
 
 .fire {
   position: absolute;
-  left: 5%;
-  bottom: -90px;
+  bottom: 0px;
+  max-width: 630px;
+  width: 35%;
 
   @include tablet {
     width: 20%;
-    bottom: -70px;
+    bottom: 0px;
   }
 
   @include mobile {
     width: 30%;
-    bottom: -30px;
   }
 }
 
 .part1 {
   position: absolute;
+  width: 100%;
+
 
   @include laptop {
     width: 50%;
@@ -227,9 +271,10 @@
   }
 }
 
-.part2{
+.part2 {
   position: absolute;
   bottom: 0;
+  width: 100%;
 
   @include laptop {
     width: 50%;
@@ -244,6 +289,8 @@
 .part3 {
   position: absolute;
   right: 0;
+  width: 100%;
+
 
   @include laptop {
     width: 50%;
@@ -260,6 +307,8 @@
   position: absolute;
   top: 0;
   right: 20%;
+  width: 100%;
+
 }
 
 .part5 {
@@ -267,4 +316,6 @@
   bottom: 0;
   left: 20%;
   z-index: 1;
+  width: 100%;
+
 }

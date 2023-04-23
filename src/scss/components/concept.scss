@@ -1,3 +1,5 @@
+@import '../mixins';
+
 .main__concept {
   position: relative;
   z-index: 2;
@@ -92,6 +94,15 @@
   top: 0;
   left: -50px;
   text-transform: uppercase;
+
+  @include small-tablet {
+    font-size: 10rem;
+    left: -40px;
+  }
+
+  @include mobile {
+    font-size: 7rem;
+  }
 }
 
 .features__title {

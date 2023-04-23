@@ -1045,23 +1045,29 @@ input:checked ~ nav > ul > li {
   margin-top: -5rem;
 }
 .game__inner--bottom > .lore__text {
-  margin-right: 25rem;
-  width: 35%;
+  width: 50%;
+  margin-right: 0;
 }
 @media (max-width: 1280px) {
   .game__inner--bottom > .lore__text {
-    width: 40%;
+    width: 93%;
   }
 }
 @media (max-width: 1024px) {
   .game__inner--bottom > .lore__text {
-    width: 88%;
     margin-right: 0;
   }
 }
 @media (max-width: 768px) {
   .game__inner--bottom > .lore__text {
     width: 95%;
+  }
+}
+@media (max-width: 1280px) {
+  .game__inner--bottom {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
 }
 @media (max-width: 1024px) {
@@ -1107,7 +1113,7 @@ input:checked ~ nav > ul > li {
 
 .game__lore {
   position: relative;
-  width: 35%;
+  width: 45%;
   margin-right: 2rem;
   z-index: 2;
 }
@@ -1120,12 +1126,17 @@ input:checked ~ nav > ul > li {
 
 .game__img {
   position: relative;
-  width: 50%;
+  width: 45%;
+}
+@media (max-width: 1280px) {
+  .game__img {
+    margin-top: 10rem;
+  }
 }
 @media (max-width: 768px) {
   .game__img {
     margin-top: 3rem;
-    width: 50%;
+    width: 80%;
   }
 }
 @media (max-width: 576px) {
@@ -1182,6 +1193,7 @@ input:checked ~ nav > ul > li {
 .lore__img {
   position: relative;
   z-index: 2;
+  width: 60%;
 }
 .lore__img--light {
   position: absolute;
@@ -1852,6 +1864,10 @@ input:checked ~ nav > ul > li {
   padding: 3rem 2rem 2rem 2rem;
   margin-right: 3rem;
 }
+.team__item > a {
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
 .team__item:last-child {
   margin-right: 0;
 }
@@ -1984,6 +2000,8 @@ input:checked ~ nav > ul > li {
 }
 
 .team__load {
+  position: relative;
+  z-index: 2;
   padding: 1.4rem 3.3rem;
   background: #e99126;
   border-radius: 40px;
@@ -2106,6 +2124,214 @@ input:checked ~ nav > ul > li {
   }
 }
 
+.people .list {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px 12px;
+  overflow-x: auto;
+  position: relative;
+  z-index: 2;
+}
+
+@media only screen and (min-width: 580px) {
+  .people .list {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 1050px) {
+  .people .list {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 2rem;
+  }
+}
+.people .el {
+  margin: 0;
+  padding: 32px 16px 40px 16px;
+  position: relative;
+  background: #232323;
+  color: var(--grey);
+  font-size: 15px;
+  line-height: 1.6;
+  border-radius: 10px;
+  -webkit-box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
+  text-align: left;
+  display: block;
+  border: 0;
+  outline: none;
+  -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.people .el.fadeMe {
+  opacity: 0;
+}
+
+.people .el.folded:not(.show) {
+  display: none;
+}
+
+.people .el .photo {
+  position: relative;
+  margin: 0 auto 20px auto;
+  width: 155px;
+  height: 155px;
+  border-radius: 50%;
+}
+
+.people .el .photo:before {
+  content: "";
+  position: absolute;
+  top: 36%;
+  left: 37%;
+  background: url(../img/partners/Frame.png) no-repeat 50% 50%;
+  width: 212px;
+  height: 215px;
+  background-size: contain;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  margin: -85px -85.5px;
+  -webkit-animation: rotate 10s linear infinite;
+  animation: rotate 10s linear infinite;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+@media (pointer: fine) {
+  .people .el:hover .photo:before {
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+  }
+}
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.people .el .photo > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+
+.people .el .photo .social {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: -13px;
+}
+.people .el .photo .social > svg {
+  height: 30px;
+  width: 30px;
+}
+
+.people .el .photo .social img {
+  width: 32px;
+  height: auto;
+}
+
+.people .el .caption {
+  color: var(--white);
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.666;
+  text-transform: uppercase;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 5em;
+}
+
+.people .el h3,
+.people .el .h3 {
+  font-size: 133%;
+  line-height: 1.25;
+  overflow: hidden;
+  max-height: 2.5em;
+  margin: 0;
+  color: var(--white);
+}
+
+.people .el .descr {
+  overflow: hidden;
+  height: 4.8em;
+  color: #acacac;
+}
+
+.people .el .link-more {
+  white-space: nowrap;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 18px;
+  font-size: 12px;
+  text-decoration: none;
+  color: #acacac;
+}
+.people .el .link-more:hover {
+  cursor: pointer;
+}
+
+.people .el:not(.hasMore) .link-more {
+  display: none;
+}
+
+.people .el:not(.open) .link-more .for-close,
+.people .el.open .link-more .for-open {
+  display: none;
+}
+
+.people .load-more {
+  text-align: center;
+  margin-top: 30px;
+  /*02.12.21*/
+}
+
+.people:not(.hasFolded) .load-more {
+  display: none;
+}
+
+.people .load-more .btn {
+  display: inline-block;
+  vertical-align: top;
+  min-width: 170px;
+}
+
 /* stylelint-disable */ /* stylelint-disable */
 .custom-checkbox__field:checked + .custom-checkbox__content::after {
   opacity: 1;
@@ -2123,7 +2349,7 @@ input:checked ~ nav > ul > li {
 
 /* stylelint-disable */ /* stylelint-disable */ /* stylelint-disable */
 .chart {
-  margin-top: 3rem;
+  margin-top: 8rem;
   margin-bottom: 7rem;
   -webkit-transform: scale(2);
   -ms-transform: scale(2);

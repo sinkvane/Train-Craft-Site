@@ -312,6 +312,10 @@
   padding: 3rem 2rem 2rem 2rem;
   margin-right: 3rem;
 }
+.team__item > a {
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
 .team__item:last-child {
   margin-right: 0;
 }
@@ -444,6 +448,8 @@
 }
 
 .team__load {
+  position: relative;
+  z-index: 2;
   padding: 1.4rem 3.3rem;
   background: #e99126;
   border-radius: 40px;

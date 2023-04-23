@@ -36,11 +36,11 @@
     display: none;
 
     @include tablet {
+      top: 1%;
       display: block;
       width: 140px;
       height: 54px;
       left: 20px;
-      top: 2%;
       z-index: 5;
     }
   }

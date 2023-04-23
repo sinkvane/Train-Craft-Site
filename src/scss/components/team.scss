@@ -242,6 +242,10 @@
   padding: 3rem 2rem 2rem 2rem;
   margin-right: 3rem;
 
+  & > a {
+    align-self: flex-end;
+  }
+
   &:last-child {
     margin-right: 0;
   }
@@ -357,6 +361,8 @@
 }
 
 .team__load {
+  position: relative;
+  z-index: 2;
   padding: 1.4rem 3.3rem;
   background: #e99126;
   border-radius: 40px;
